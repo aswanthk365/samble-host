@@ -1,0 +1,31 @@
+<h1>{{ a.task_name }}</h1>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static '\css\index.css' %}">
+</head>
+<body>
+    <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{a.task_name}}</h5>
+            <p class="card-text">{{a.priority}} </p>
+            <p class="card-text">{{a.date}} </p>
+
+            <a href="{% url 'delete' a.id %}" class="btn btn-primary">Delete</a>
+            <a href="{% url 'update' a.id %}" class="btn btn-primary">Update</a>
+
+            {% comment %} <a href="{% url 'updatte' i.id %}" class="btn btn-primary">Update</a> {% endcomment %}
+
+          </div>
+        </div>
+        <br>
+      </div>
+    </body>
+</html>
